@@ -1,0 +1,11 @@
+name: Target Workflow
+
+on:
+  repository_dispatch:
+    types: [custom-trigger]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Triggered by repository_dispatch"
