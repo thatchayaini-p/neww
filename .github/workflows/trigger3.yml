@@ -1,0 +1,9 @@
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.check.outputs.trigger }}
+
+  deploy:
+    if: needs.setup.outputs.should_run == 'true'
+    uses: ./.github/workflows/deploy.yml
