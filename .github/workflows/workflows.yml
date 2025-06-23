@@ -1,0 +1,8 @@
+jobs:
+  call-child:
+    strategy:
+      matrix:
+        name: [one, two]
+    uses: ./.github/workflows/child.yml
+    with:
+      name: ${{ matrix.name }}
