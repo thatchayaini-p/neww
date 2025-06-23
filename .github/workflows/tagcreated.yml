@@ -1,0 +1,4 @@
+on:
+  create:
+    tags:
+      - 'v*'
